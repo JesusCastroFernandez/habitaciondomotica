@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class HabitacionDomotica {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        boolean luzEncendida = false;
+        int temperatura = 20;
+
+        while (true) {
+            System.out.println("\n=== HABITACION DOMOTICA ===");
+            System.out.println("1. Encender/apagar la luz");
+            System.out.println("2. Aumentar temperatura");
+            System.out.println("3. Disminuir temperatura");
+            System.out.println("4. Salir");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    luzEncendida = !luzEncendida;
+                    if (luzEncendida) {
+                        System.out.println("Luz encendida.");
+                    } else {
+                        System.out.println("Luz apagada.");
+                    }
+                    break;
+                case 2:
+                    temperatura++;
+                    System.out.println("Temperatura: " + temperatura + " °C");
+                    break;
+                case 3:
+                    temperatura--;
+                    System.out.println("Temperatura: " + temperatura + " °C");
+                    break;
+                case 4:
+                    System.out.println("Saliendo del programa...");
+                    return;
+                default:
+                    System.out.println("Opción inválida.");
+                    break;
+            }
+        }
+    }
+}
